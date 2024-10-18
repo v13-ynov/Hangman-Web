@@ -18,6 +18,8 @@ type GameState struct {
 }
 
 var game GameState
+
+
 var mu sync.Mutex
 
 const port = ":8080"
