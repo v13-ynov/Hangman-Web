@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"text/template"
 )
 
 const port = ":8080"
