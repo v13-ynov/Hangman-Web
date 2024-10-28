@@ -1,5 +1,3 @@
-Hangman project : September 29 to October 16
-
 Project w/ Quentin.L - Gabriel.L - Mathis.U - Vitorio.G
 
 Pour installer raylib : apt-get install libgl1-mesa-dev libxi-dev libxcursor-dev libxrandr-dev libxinerama-dev libwayland-dev libxkbcommon-dev
