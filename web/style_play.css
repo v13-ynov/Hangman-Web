@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-image: url(images/Hangman_fond.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
+}h1{
+    font-size: 2em;
+    color: #333;
+}p, pre{
+    font-size: 1.2em;
+    color: #555;
+}form{
+    margin: 10px 0;
+}input[type="text"]{
+    font-size: 1em;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    margin-right: 10px;
+}input[type="submit"]{
+    font-size: 1em;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}input[type="submit"]:hover{
+    background-color: #0056b3;
+}.message{
+    font-size: 1.2em;
+    color: #d9534f;
+    font-weight: bold;
+}.message.success {
+        color: #28a745; 
+        font-weight: bold;
+}.attempts, .guess-word{
+    margin-top: 15px;
+}.normal{
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}.normal:hover {
+        background-color: #218838; 
+}.difficile{
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}.difficile:hover {
+        background-color: #c82333; 
+}.quit-game {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}.quit-game input[type="submit"] {
+    font-size: 3em;
+    padding: 5px 10px;
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}.quit-game input[type="submit"]:hover {
+    background-color: #a02b37;
+}.white-block {
+    background-color: white; 
+    padding: 10px;
+    width: 570px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: auto;
+}
