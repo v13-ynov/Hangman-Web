@@ -51,13 +51,18 @@ func QuitHandler(w http.ResponseWriter, r *http.Request) {
 	GameInstance = Game{} // Reset the game state if necessary
 	http.Redirect(w, r, "/menu", http.StatusSeeOther) // Redirect to the main menu
 }
+// Function to display the credits
+func Credit(w http.ResponseWriter, r *http.Request) { 
+	tmpl := template.Must(template.ParseFiles("web/credit.html")) // Render the templates of credits in the web
+	tmpl.Execute(w, nil)
+}
 // function to handle the normale rules
-func RulesHandler_normal(w http.ResponseWriter, r *http.Request) { // Function to render the menu
+func RulesHandler_normal(w http.ResponseWriter, r *http.Request) { 
 	tmpl := template.Must(template.ParseFiles("web/web_rules.html")) // Render the templates of menu in the web
 	tmpl.Execute(w, nil)
 }
 // function to handle the hard rules
-func RulesHandler_hard(w http.ResponseWriter, r *http.Request) { // Function to render the menu
+func RulesHandler_hard(w http.ResponseWriter, r *http.Request) { 
 	tmpl := template.Must(template.ParseFiles("web/web_rules_hard.html")) // Render the templates of menu in the web
 	tmpl.Execute(w, nil)
 }

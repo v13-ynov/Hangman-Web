@@ -30,6 +30,7 @@ hangmanweb.GameInstance = hangmanweb.Game{ // Add in the html the variable
 	http.HandleFunc("/rules_hard", hangmanweb.RulesHandler_hard) //http://localhost:8080/rules (to go in the rules of the game in hardmode)
 	http.HandleFunc("/", hangmanweb.Web) 				   //http://localhost:8080/        (to go to the game without passing the menu)
 	http.HandleFunc("/guess", hangmanweb.GuessHandler)
+	http.HandleFunc("/credits", hangmanweb.Credit)         // http://localhost:8080/credits
 	http.Handle("/web/", http.StripPrefix("/web/", http.FileServer(http.Dir("web")))) // take the file css and execute them with the html
 	http.ListenAndServe(":8080", nil) // Add a port for the request
 }
