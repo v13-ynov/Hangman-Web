@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu</title>
+    <link rel="stylesheet" href="/web/style_play.css">
+</head>
+<body>
+    <div class="quit-game">
+        <form action="/quit" method="POST">
+            <input type="submit" value="RAGEQUIT">
+        </form>
+    </div>
+    <div class="white-block">
+    <h1>Jeu du Pendu</h1>
+    <p>Mot à deviner : {{ .HiddenWordStr }}</p> 
+    <pre>{{ .HangmanStr }}</pre>
+
+    {{ if not .HardMode }}
+        <p>Lettres devinées : {{ .GuessedLettersStr }}</p>
+    {{ end }}
+    
+    <p>Il vous reste <span class="attempts">{{ .AttemptsLeft }}</span> tentatives.</p>
+
+    {{ if not .Finished }}
+    <div class="guess">
+        <form action="/guess" method="POST">
+            <p>Devinez une lettre ou le mot complet :</p>
+            <input type="text" name="input" maxlength="50" required>
+            <input type="submit" value="Valider">
+        </form>
+    </div>
+{{ else }}
+    <p>Jeu terminé :</p>
+    <p><a class="normal" href="/restart">Rejouer en mode normal</a> | <a class="difficile" href="/restart?mode=hard">Rejouer en mode difficile</a></p>
+{{ end }}
+    {{ $isSuccess := eq .Message "Félicitations ! Vous avez deviné le mot." }}
+<p class="message {{ if $isSuccess }}success{{ end }}">{{ .Message }}</p>
+</div>
+</body>
+</html>
