@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-image: url(images/hangman_fond_menu.webp);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
+    overflow-y: hidden 
+}h1{
+    font-size: 2em;
+    color: #333;
+}p{
+    font-size: 1.2em;
+}h2{
+    font-size: 1.2em;
+    color:  #555;
+}.normal{
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}.normal:hover {
+    background-color: #218838; 
+}.difficile{
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}.difficile:hover {
+    background-color: #c82333; 
+}.white-block {
+    background-color: white; 
+    padding: 10px;
+    width: 900px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: auto;
+}.image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; 
+}.credits {
+    text-decoration: none;
+    color: white;
+    background-color: #960018;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 400px;
+    display: inline-block;
+    overflow-y:auto
+}.credits:hover {
+    background-color: #700013;
+}
