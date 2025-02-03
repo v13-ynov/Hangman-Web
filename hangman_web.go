@@ -22,7 +22,7 @@ var GameInstance Game
 
 // function to define the function for the web
 func Web(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("web/web.html"))             // Render the templates in the web
+	tmpl := template.Must(template.ParseFiles("web/game.html"))             // Render the templates in the web
 	hiddenWord := ConvertWordToString(GameInstance.HiddenWord)             // Render the hidden word
 	guessedLetters := strings.ToUpper(string(GameInstance.GuessedLetters)) // Render the letter guessed by the user
 	hangmanStage := hg.DrawHangman(10 - GameInstance.AttemptsLeft)         // Render the hangman in web
@@ -43,30 +43,27 @@ func Web(w http.ResponseWriter, r *http.Request) {
 
 // function to create the menu
 func MenuHandler(w http.ResponseWriter, r *http.Request) { // Function to render the menu
-	tmpl := template.Must(template.ParseFiles("web/web_menu.html")) // Render the templates of menu in the web
+	tmpl := template.Must(template.ParseFiles("web/home.html")) // Render the templates of menu in the web
 	tmpl.Execute(w, nil)
+}
+func GameModeHandler(w http.ResponseWriter, r *http.Request) {
+    tmpl := template.Must(template.ParseFiles("web/game_mode.html"))
+    tmpl.Execute(w, nil)
 }
 // Function to handle quitting the game
 func QuitHandler(w http.ResponseWriter, r *http.Request) {
-	GameInstance = Game{} // Reset the game state if necessary
 	http.Redirect(w, r, "/menu", http.StatusSeeOther) // Redirect to the main menu
 }
 // Function to display the credits
 func Credit(w http.ResponseWriter, r *http.Request) { 
-	tmpl := template.Must(template.ParseFiles("web/credit.html")) // Render the templates of credits in the web
+	tmpl := template.Must(template.ParseFiles("web/credits.html")) // Render the templates of credits in the web
 	tmpl.Execute(w, nil)
 }
 // function to handle the normale rules
 func RulesHandler_normal(w http.ResponseWriter, r *http.Request) { 
-	tmpl := template.Must(template.ParseFiles("web/web_rules.html")) // Render the templates of menu in the web
+	tmpl := template.Must(template.ParseFiles("web/rules.html")) // Render the templates of menu in the web
 	tmpl.Execute(w, nil)
 }
-// function to handle the hard rules
-func RulesHandler_hard(w http.ResponseWriter, r *http.Request) { 
-	tmpl := template.Must(template.ParseFiles("web/web_rules_hard.html")) // Render the templates of menu in the web
-	tmpl.Execute(w, nil)
-}
-
 // function to play the game
 func GuessHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
