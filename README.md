@@ -1,4 +1,4 @@
-Project w/ Quentin.L - Gabriel.L - Mathis.U - Vitorio.G
+Project w/ Quentin.L - Gabriel.L - Mathis.U - Vittorio.G
 
 Pour installer raylib : apt-get install libgl1-mesa-dev libxi-dev libxcursor-dev libxrandr-dev libxinerama-dev libwayland-dev libxkbcommon-dev
 

@@ -26,7 +26,6 @@ hangmanweb.GameInstance = hangmanweb.Game{ // Add in the html the variable
 	http.HandleFunc("/menu", hangmanweb.MenuHandler)       //http://localhost:8080/menu (to go in the menu)
 	http.HandleFunc("/quit", hangmanweb.QuitHandler)
 	http.HandleFunc("/rules", hangmanweb.RulesHandler_normal)     //http://localhost:8080/rules (to go in the rules of the game)
-	http.HandleFunc("/rules_hard", hangmanweb.RulesHandler_hard) //http://localhost:8080/rules_hard (to go in the rules of the game in hardmode)
 	http.HandleFunc("/restart", hangmanweb.RestartGame)	   //http://localhost:8080/restart (to restart a new game, to restart in hardmode : http://localhost:8080//restart?mode=hard)
 	http.HandleFunc("/", hangmanweb.Web) 				   //http://localhost:8080/        (to go to the game without passing the menu)
 	http.HandleFunc("/game", hangmanweb.GameModeHandler) //http://localhost:8080/game      (to go to the game mode)
